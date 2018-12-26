@@ -1,0 +1,8 @@
+/target/
+
+#eclipse files and directories
+.settings
+.classpath
+.project
+
+.DS_Store
