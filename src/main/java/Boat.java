@@ -4,9 +4,10 @@ public abstract class Boat {
 	private int xPos;
 	private int yPos;
 	private int size;
-	private int amount;
+	private boolean boatHit;
 	
 //	public Boat() {
+//		this.size = size;
 //		
 //	}
 	
@@ -26,13 +27,6 @@ public abstract class Boat {
 		this.yPos = yPos;
 	}
 
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
 
 	public int getSize() {
 		return size;
@@ -40,6 +34,14 @@ public abstract class Boat {
 
 	public void setSize(int size) {
 		this.size = size;
+	}
+
+	public boolean isBoatHit() {
+		return boatHit;
+	}
+
+	public void setBoatHit(boolean boatHit) {
+		this.boatHit = boatHit;
 	}
 	
 	
