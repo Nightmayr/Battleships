@@ -25,10 +25,6 @@ public class Board {
 		
 		
 		
-		if(boat instanceof PatrolBoat) {
-			
-		}
-		
 	}
 
 	public String[][] getBoard() {

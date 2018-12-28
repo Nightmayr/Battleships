@@ -6,6 +6,8 @@ public class Player {
 	private int xChoice;
 	private int yChoice;
 	
+	Board board = new Board();
+	
 	public void playerStrike() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -16,14 +18,30 @@ public class Player {
 		
 	}
 	
-	public void boatPlacement() {
+	// Set boat location
+	public void boatPlacement(Boat boat) {
+		String boatChoice;
+		String[] boatCoords;
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter boat placement");
+		System.out.print(">");
+		boatChoice = sc.next().toUpperCase();
+		boatCoords = boatChoice.split(",");
 		
+//		for(int i=0; i<boatCoords.length; i++) {
+//			System.out.println(boatCoords[i]);
+//		}
 		
-		setyChoice(sc.nextInt());
+		if(boatCoords[0]=="V") {
+			for(int i = 0; i<boat.getSize();i++) {
+				String[][] boatSetCoords = new String[3][3];
+				boatSetCoords[boat.getxPos()][boat.getyPos()-i] = "p";
+				board.setBoard(boatSetCoords);
+			}
+		}
+
+		
 	}
-	
-	
 	
 
 	public int getxChoice() {

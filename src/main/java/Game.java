@@ -1,22 +1,22 @@
-import java.util.Scanner;
-
 public class Game {
 	
 	Player player = new Player();
-	PatrolBoat patrol1 = new PatrolBoat(2);
-	PatrolBoat patrol2 = new PatrolBoat(2);
-	Battleship battleship1 = new Battleship(3);
-	Battleship battleship2 = new Battleship(3);
-	Submarine sub = new Submarine(3);
-	Destroyer destroyer = new Destroyer(4);
-	Carrier carrier = new Carrier(5);
 	Board board = new Board();
+	Boat patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1);
 	
 	public void gameStart() {
 		board.createBoard();
 		board.printBoard();
+		this.placementMessage();
+		player.boatPlacement(patrol1);
+		board.printBoard();
 		
-		
+	}
+	
+	public void placementMessage() {
+		System.out.println("Enter boat placement using the format: orientation(v or h),x coordinate,y coordinate");
+		System.out.println("Example: v,1,1");
+		System.out.println("Boat will extend to the right or down respective of orientation choice");
 	}
 	
 

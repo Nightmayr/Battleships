@@ -1,48 +1,31 @@
+import java.util.HashMap;
 
-public abstract class Boat {
+public class Boat {
 	
-	private int xPos;
-	private int yPos;
-	private int size;
-	private boolean boatHit;
+	private Coord coord;
+	private char orientation;
+	private BoatType boatType;
 	
-//	public Boat() {
-//		this.size = size;
-//		
-//	}
-	
-	public int getxPos() {
-		return xPos;
-	}
-	
-	public void setxPos(int xPos) {
-		this.xPos = xPos;
+	public static final HashMap<BoatType, Integer> boatSize;
+	static
+	{
+		boatSize = new HashMap<BoatType,Integer>();
+		boatSize.put(BoatType.PATROLBOAT, 2);
+		boatSize.put(BoatType.BATTLESHIP, 3);
+		boatSize.put(BoatType.SUBMARINE, 3);
+		boatSize.put(BoatType.DESTROYER, 4);
+		boatSize.put(BoatType.CARRIER, 5);
 	}
 	
-	public int getyPos() {
-		return yPos;
+	
+	public Boat(BoatType boatType, char orientation, int x, int y) {
+		this.boatType = boatType;
+		this.orientation = orientation;
+		coord = new Coord(x, y);
+		
 	}
 	
-	public void setyPos(int yPos) {
-		this.yPos = yPos;
-	}
-
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public boolean isBoatHit() {
-		return boatHit;
-	}
-
-	public void setBoatHit(boolean boatHit) {
-		this.boatHit = boatHit;
-	}
+	
 	
 	
 
