@@ -15,32 +15,22 @@ public class Player {
 		setxChoice(sc.nextInt());
 		System.out.println("Enter y coordinate");
 		setyChoice(sc.nextInt());
+		sc.close();
 		
 	}
 	
 	// Set boat location
-	public void boatPlacement(Boat boat) {
+	public void boatPlacement() {
 		String boatChoice;
-		String[] boatCoords;
+		String[] boatOptions;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter boat placement");
 		System.out.print(">");
 		boatChoice = sc.next().toUpperCase();
-		boatCoords = boatChoice.split(",");
-		
-//		for(int i=0; i<boatCoords.length; i++) {
-//			System.out.println(boatCoords[i]);
-//		}
-		
-		if(boatCoords[0]=="V") {
-			for(int i = 0; i<boat.getSize();i++) {
-				String[][] boatSetCoords = new String[3][3];
-				boatSetCoords[boat.getxPos()][boat.getyPos()-i] = "p";
-				board.setBoard(boatSetCoords);
-			}
-		}
-
-		
+		boatOptions = boatChoice.split(",");
+		Boat patrol1 = new Boat(BoatType.PATROLBOAT, boatOptions[0].charAt(0), Integer.parseInt(boatOptions[1]), Integer.parseInt(boatOptions[2]));
+//		System.out.println(patrol1.getCoord().getX());
+		sc.close();
 	}
 	
 

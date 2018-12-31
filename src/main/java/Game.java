@@ -2,13 +2,12 @@ public class Game {
 	
 	Player player = new Player();
 	Board board = new Board();
-	Boat patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1);
 	
 	public void gameStart() {
-		board.createBoard();
+		
 		board.printBoard();
 		this.placementMessage();
-		player.boatPlacement(patrol1);
+		player.boatPlacement();
 		board.printBoard();
 		
 	}
