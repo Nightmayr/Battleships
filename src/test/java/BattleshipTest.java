@@ -14,7 +14,7 @@ public class BattleshipTest {
 	
 	@Before
 	public void setup() {
-		player = new Player();
+		player = new Player("umayr");
 		game = new Game();
 		board = new Board();
 		patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1);

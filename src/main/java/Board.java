@@ -5,16 +5,14 @@ public class Board {
 	public final int boardYSize = 3;
 	
 	private CoordInfo[][] board = new CoordInfo[boardXSize][boardYSize];
-//	private char[][] board = new char[boardXSize][boardYSize];
 	
-	public void createBoard() {
+	
+	public Board() {
 		for(int x = 0; x<boardXSize; x++) {
 			for(int y = 0; y<boardYSize; y++) {
 				this.board[x][y] = new CoordInfo();
-				
 			}
 		}
-		
 	}
 	
 	public void printBoard() {
