@@ -10,6 +10,7 @@ public class BattleshipTest {
 	Player player;
 	Board board;
 	Boat patrol1;
+	Boat patrol2;
 	
 	@Before
 	public void setup() {
@@ -17,6 +18,7 @@ public class BattleshipTest {
 		game = new Game();
 		board = new Board();
 		patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1);
+		patrol2 = new Boat(BoatType.PATROLBOAT, 'x', 1, 1);
 	}
 	
 	@Test @Ignore
@@ -26,33 +28,46 @@ public class BattleshipTest {
 	
 	@Test
 	public void boatCoordTest() {
-		int boatX = patrol1.getCoord().getX();
-		int boatY = patrol1.getCoord().getY();
+		int boatX = patrol1.getX();
+		int boatY = patrol1.getY();
 		assertEquals(1,boatX);
 		assertEquals(1,boatY);
 	}
 	
 	@Test
 	public void boatSizeTest() {
-		int boatSize = patrol1.boatInfo.get(patrol1.getBoatType()).getSize();
+		BoatType type = patrol1.getBoatType();
+		int boatSize = BoatInfo.getSizeS(type);
 		assertEquals(2,boatSize);
 	}
 	
 	@Test
 	public void horizontalBoundTest() {
-		assertTrue((patrol1.getCoord().getX()>=0) && (patrol1.getCoord().getX()+patrol1.boatInfo.get(patrol1.getBoatType()).getSize()-1<=board.getBoard()[0].length));
+		BoatType type = patrol1.getBoatType();
+		int boatSize = BoatInfo.getSizeS(type);
+		assertTrue((patrol1.getX()>=0) && (patrol1.getX()+boatSize-1<=board.getBoard()[0].length));
 	}
 	
 	@Test
 	public void verticalBoundTest() {
-		assertTrue((patrol1.getCoord().getY()>=0) && (patrol1.getCoord().getY()+patrol1.boatInfo.get(patrol1.getBoatType()).getSize()+1<=board.getBoard()[0].length));
+		BoatType type = patrol1.getBoatType();
+		int boatSize = BoatInfo.getSizeS(type);
+		assertTrue((patrol1.getY()>=0) && (patrol1.getY()+boatSize+1<=board.getBoard()[0].length));
 	}
 	
 	@Test
 	public void boatSymbolTest() {
-		char boatSymbol = patrol1.boatInfo.get(patrol1.getBoatType()).getSymbol();
+		BoatType type = patrol1.getBoatType();
+		char boatSymbol = BoatInfo.getSymbolS(type);
 		assertEquals('P', boatSymbol);
 	}
+	
+	@Test
+	public void orientationTest() {
+		char orientation = patrol1.getOrientation();
+//		assertTrue(orientation );
+	}
+	
 
 	
 }

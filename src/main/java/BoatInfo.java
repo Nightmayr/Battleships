@@ -29,6 +29,10 @@ public class BoatInfo {
 		return size;
 	}
 	
+	public static int getSizeS(BoatType b) {
+		return boatInfo.get(b).getSize();
+	}
+	
 	public char getSymbol() {
 		return description.charAt(0);
 	}

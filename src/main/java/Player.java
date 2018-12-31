@@ -9,14 +9,12 @@ public class Player {
 	Board board = new Board();
 	
 	public void playerStrike() {
-		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter x coordinate");
 		setxChoice(sc.nextInt());
 		System.out.println("Enter y coordinate");
 		setyChoice(sc.nextInt());
 		sc.close();
-		
 	}
 	
 	// Set boat location
@@ -30,7 +28,7 @@ public class Player {
 		boatOptions = boatChoice.split(",");
 		
 		Boat patrol1 = new Boat(BoatType.PATROLBOAT, boatOptions[0].charAt(0), Integer.parseInt(boatOptions[1]), Integer.parseInt(boatOptions[2]));
-		System.out.println(patrol1.getCoord().getX());
+		System.out.println(patrol1.getX());
 		sc.close();
 	}
 	
