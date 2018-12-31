@@ -1,16 +1,16 @@
 
 public class CoordInfo {
 	
-	private Boat boatObj;
+	private Boat boat;
 	private boolean hit = false;
 	
 	
-	public Boat getBoatObj() {
-		return boatObj;
+	public Boat getBoat() {
+		return boat;
 	}
 	
-	public void setBoatObj(Boat boatObj) {
-		this.boatObj = boatObj;
+	public void setBoat(Boat boat) {
+		this.boat = boat;
 	}
 	
 	public boolean isHit() {

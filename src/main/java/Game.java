@@ -4,7 +4,7 @@ public class Game {
 	Board board = new Board();
 	
 	public void gameStart() {
-		
+		board.createBoard();
 		board.printBoard();
 		this.placementMessage();
 		player.boatPlacement();

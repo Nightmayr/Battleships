@@ -28,8 +28,9 @@ public class Player {
 		System.out.print(">");
 		boatChoice = sc.next().toUpperCase();
 		boatOptions = boatChoice.split(",");
+		
 		Boat patrol1 = new Boat(BoatType.PATROLBOAT, boatOptions[0].charAt(0), Integer.parseInt(boatOptions[1]), Integer.parseInt(boatOptions[2]));
-//		System.out.println(patrol1.getCoord().getX());
+		System.out.println(patrol1.getCoord().getX());
 		sc.close();
 	}
 	
