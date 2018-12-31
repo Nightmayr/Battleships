@@ -16,16 +16,21 @@ public class Game {
 		fleet.add(BoatType.DESTROYER);
 		fleet.add(BoatType.CARRIER);
 		
+		Boat patrol1;
 		
 		//Initialise First player
 		Player p1 = new Player("umayr");
+		placementMessage();
+		String[] options = p1.boatPlacement();
 		CoordInfo[][] p1Board = p1.board.getBoard();
 		try {
-			Boat patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 2, 2, p1Board);
+			patrol1 = new Boat(BoatType.PATROLBOAT, options[0].charAt(0), Integer.parseInt(options[1]), Integer.parseInt(options[2]), p1Board);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		//Place Fleet
+//		fleet.stream().forEach(action);
+		
 		
 		//Likewise for second player
 		//Enter while loop player 1 shoot, player 2 shoot
@@ -35,7 +40,7 @@ public class Game {
 	
 	
 	
-	public void placementMessage() {
+	public static void placementMessage() {
 		System.out.println("Enter boat placement using the format: orientation(v or h),x coordinate,y coordinate");
 		System.out.println("Example: v,1,1");
 		System.out.println("Boat will extend to the right or down respective of orientation choice");

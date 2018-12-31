@@ -22,20 +22,20 @@ public class Player {
 //		setyChoice(sc.nextInt());
 //		sc.close();
 //	}
-//	
-//	// Set boat location
-//	public void boatPlacement() {
-//		String boatChoice;
-//		String[] boatOptions;
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("Enter boat placement");
-//		System.out.print(">");
-//		boatChoice = sc.next().toUpperCase();
-//		boatOptions = boatChoice.split(",");
-//		
+	
+	// Set boat location
+	public String[] boatPlacement() {
+		String boatChoice;
+		String[] boatOptions;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter boat placement");
+		System.out.print(">");
+		boatChoice = sc.next().toUpperCase();
+		boatOptions = boatChoice.split(",");
+		
 //		Boat patrol1 = new Boat(BoatType.PATROLBOAT, boatOptions[0].charAt(0), Integer.parseInt(boatOptions[1]), Integer.parseInt(boatOptions[2]));
-//		BoatType type = patrol1.getBoatType();
-//		board.setBoard(board[patrol1.getX()][patrol1.getY()]) = 
-//		sc.close();
-//	}
+		sc.close();
+		
+		return boatOptions;
+	}
 }

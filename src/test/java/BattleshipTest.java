@@ -17,7 +17,7 @@ public class BattleshipTest {
 		player = new Player("umayr");
 		game = new Game();
 		board = new Board();
-		patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1);
+		patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 1, 1, player.board);
 		patrol2 = new Boat(BoatType.PATROLBOAT, 'x', 1, 1);
 	}
 	
