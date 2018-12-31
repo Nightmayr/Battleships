@@ -20,10 +20,17 @@ public class Game {
 		//Initialise First player
 		Player p1 = new Player("umayr");
 		CoordInfo[][] p1Board = p1.board.getBoard();
+		try {
+			Boat patrol1 = new Boat(BoatType.PATROLBOAT, 'v', 2, 2, p1Board);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		//Place Fleet
 		
 		//Likewise for second player
 		//Enter while loop player 1 shoot, player 2 shoot
+		
+		p1.board.printBoard();
 	}
 	
 	

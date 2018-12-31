@@ -16,8 +16,9 @@ public class Board {
 	}
 	
 	public void printBoard() {
-		for(int x = 0; x<this.board.length; x++) {
-			for(int y=0; y<this.board.length; y++) {
+		for(int y = this.board.length-1 ; y>=0; y--) {
+			System.out.print(y+ " ");
+			for(int x=0; x<this.board.length; x++) {
 				Boat boat = board[x][y].getBoat();
 				if (boat != null) {
 					BoatType bt = boat.getBoatType();
@@ -27,10 +28,11 @@ public class Board {
 					System.out.print(" ~");
 				}
 			}
-			System.out.println(" " + (this.board.length-x-1));
+			System.out.println("");
 		}
+		System.out.print("\n   ");
 		for(int x = 0; x<this.board.length;x++) {
-			System.out.print(" " + x);
+			System.out.print(x + " ");
 		}
 		System.out.println("");
 	}
