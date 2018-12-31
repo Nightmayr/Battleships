@@ -20,6 +20,7 @@ public class Game {
 		
 		//Initialise First player
 		Player p1 = new Player("umayr");
+		p1.board.printBoard();
 		placementMessage();
 		String[] options = p1.boatPlacement();
 		CoordInfo[][] p1Board = p1.board.getBoard();

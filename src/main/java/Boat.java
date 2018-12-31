@@ -10,7 +10,17 @@ public class Boat {
 		this.orientation = orientation;
 		this.x = x;
 		this.y = y;
-		board[x][y].setBoat(this);
+		
+		
+		for(int i=0;i<BoatInfo.getSizeS(this.getBoatType());i++) {
+			if(this.orientation=='V') {
+				board[x][y-i].setBoat(this);							
+			} else if(this.orientation=='H') {
+				board[x+i][y].setBoat(this);
+			} else {
+				System.out.println("Invalid orientation entered");
+			}
+		}
 	}
 
 	public BoatType getBoatType() {
